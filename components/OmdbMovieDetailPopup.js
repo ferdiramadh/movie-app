@@ -71,7 +71,7 @@ const OmdbMovieDetailPopup = ({modalVisible,selected,setModalVisible, setState})
 
                 
               }}>
-                <Text style={{color:'white', fontSize:18, fontWeight:'bold'}}>Add to My List</Text>
+                <Text style={{color:'white', fontSize:18, fontWeight:'bold'}}>Add to My List Branch 2</Text>
               </TouchableOpacity>
               <View style={styles.subBottomContent}>
                   <Image source={require('../assets/images/imdbrating.png')} style={styles.imdbIcon} />
