@@ -34,17 +34,18 @@ const isDrawerOpen = useIsDrawerOpen()
         </TouchableOpacity>
       <DrawerItem 
         label='Search' 
-        labelStyle={{marginLeft: -20}}
+        labelStyle={{marginLeft: -20, fontWeight:'bold',color:'black'}}
         onPress={() => {
           navigation.navigate("Search")
           setActive(!active)
 
         }}
-        icon={() => {return <View style={{backgroundColor:active?'yellow':'green'}}><AntDesign name="search1" size={24} color='black'/></View>}}
+        icon={() => <AntDesign name="search1" size={24} color='black'/>}
+       
         />
       <DrawerItem 
         label='WatchList' 
-        labelStyle={{marginLeft: -20}}
+        labelStyle={{marginLeft: -20,}}
         onPress={() => navigation.navigate("myMovieList")}
         icon={() =>{ 
                
@@ -52,7 +53,7 @@ const isDrawerOpen = useIsDrawerOpen()
            <View style={{width:'100%', height:'100%',flexDirection:'row',}}>
                <Feather name="film" size={24} color="black" />
                <View style={{width:'100%',justifyContent:'center'}}>
-               <Text style={{marginLeft:12}} >WatchList</Text>
+               <Text style={{marginLeft:12,fontWeight:'bold',color:'black'}} >WatchList</Text>
                 {movies.length == 0? null :  <View style={{width:20, height:20, backgroundColor:'red', position:'absolute', right:20, borderRadius:20,justifyContent:'center',alignItems:'center'}}><Text style={{fontWeight:'bold',color:'white'}}>{movies.length}</Text></View>}
              </View></View>
           )} }

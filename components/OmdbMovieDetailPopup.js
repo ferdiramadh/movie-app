@@ -71,7 +71,7 @@ const OmdbMovieDetailPopup = ({modalVisible,selected,setModalVisible, setState})
 
                 
               }}>
-                <Text style={{color:'white', fontSize:18, fontWeight:'bold'}}>Add to My List Branch 2</Text>
+                <Text style={{color:'white', fontSize:18, fontWeight:'bold'}}>Add to My List</Text>
               </TouchableOpacity>
               <View style={styles.subBottomContent}>
                   <Image source={require('../assets/images/imdbrating.png')} style={styles.imdbIcon} />
@@ -160,12 +160,12 @@ const styles = StyleSheet.create({
       justifyContent:'center',
       alignItems:'center',
       flexDirection:'row',
-      marginLeft:50,
+      marginLeft:30,
       flex:1,
     },
     addToList: {
       // flex:1,
-      width:'40%',
+      width:'50%',
       height:40,
       backgroundColor:'#2196F3',
       justifyContent:'center',
