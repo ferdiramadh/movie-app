@@ -102,11 +102,10 @@ const styles = StyleSheet.create({
     modalView: {
       position:'relative',
       width:'90%',
-      height: '80%',
+      height: '90%',
       marginTop: 10,
       backgroundColor:'#2e3b4f',
       borderRadius: 20,
-      padding: 20,
       alignItems: "center",
       shadowColor: "#000",
       shadowOffset: {
@@ -137,22 +136,23 @@ const styles = StyleSheet.create({
       fontSize:16
     },
     modalText: {
+      marginTop:20,
       marginBottom: 5,
       textAlign: "center",
       fontWeight: "700",
       fontSize:24,
-      color:'#b6c7e0'
+      color:'#b6c7e0',
+      marginHorizontal:5
     },
    
     bottomContent: {
-      width:'100%',
+      width:'80%',
       flex:1,
       flexDirection:'row',
       justifyContent:'space-around',
       alignItems:'center',
       marginTop:10,
-      
-     
+
     },
     subBottomContent:{
       width:'50%',
@@ -162,6 +162,7 @@ const styles = StyleSheet.create({
       flexDirection:'row',
       marginLeft:30,
       flex:1,
+      
     },
     addToList: {
       // flex:1,
@@ -186,7 +187,7 @@ const styles = StyleSheet.create({
       elevation: 3,
     },
     ratingImdb:{
-      fontSize:20, 
+      fontSize:18, 
       fontWeight:'bold',
       color:'black', 
       position:'absolute', 

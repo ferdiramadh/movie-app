@@ -16,9 +16,9 @@ const OmdbResults = ({item, openPopup}) => {
                     <Image style={styles.imgPoster} source={{uri:item.Poster}}/>}
                 </View>
                 <View style={styles.textWrapper}>
-                    <Text style={styles.titleText}>{item.Title}</Text>
+                    <Text style={styles.titleText} numberOfLines={2}>{item.Title}</Text>
                     <View style={{width:'100%', height:'50%',padding: 10, justifyContent:'flex-end', borderTopWidth:2, borderTopColor:'grey', marginTop: 5}}>
-                        <Text style={{fontSize: 20, fontStyle:'italic',textAlign:'right'}}>Release Year: {item.Year}</Text>
+                        <Text style={{fontSize: 20, fontStyle:'italic',textAlign:'right', fontWeight:'bold'}}>Release Year: {item.Year}</Text>
                     </View>
                 </View>
             </View>     

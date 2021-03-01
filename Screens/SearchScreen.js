@@ -7,7 +7,6 @@ import OmdbResults from '../components/OmdbResults';
 import PageInfo from '../components/PageInfo'
 import MovieDetailPopup from '../components/movieDetailPopup';
 import OmdbMovieDetailPopup from '../components/OmdbMovieDetailPopup';
-import { KeyboardAwareScrollView } from 'react-native-keyboard-aware-scroll-view'
 import {windowWidth, windowHeight} from '../Utils/Dimensions'
 
 
