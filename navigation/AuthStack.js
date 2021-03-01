@@ -42,7 +42,7 @@ export const AuthStack = ({navigation, style}) => {
           headerTransparent:'true'
 
         }} />  
-        <Stack.Screen name='Onboarding' component={ImageUploader} />
+        <Stack.Screen name='ImageUploader' component={ImageUploader} />
         {/* <Stack.Screen name='Search' component={SearchScreen} options={() => ({
           
           headerTitle: props => <LogoTitle {...props}/>,

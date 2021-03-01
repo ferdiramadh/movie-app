@@ -9,8 +9,13 @@ const ContextProvider = (props) => {
 
       const [marginRight, setMarginRight] = useState(10)
       const [addModalVisible, setAddModalVisible] = useState(false)
-    
+      const [imageStorge, setImageStorage] = useState(null);
       const [movies, setMovies] = useState([])
+      const [personalData, setPersonalData] = useState({
+        name:'Ferdi',
+        Bio:'Lalala',
+        Location:'Bogor'
+      })
   
       const addMovie =  (movie_data) => {
         if(movie_data.title !== ''){
@@ -51,7 +56,7 @@ const ContextProvider = (props) => {
   
         const getData = async () => {
           try {
-            const value = await AsyncStorage.getItem('@storage_Key')
+            const value = await AsyncStorage.multiGet(['@storage_Key','@img_Key'])
             const data = JSON.parse(value)
             
             if(data !== null) {
@@ -87,7 +92,6 @@ const ContextProvider = (props) => {
   
         const removeMovie = id => {
           setMovies(movies.filter(movie => movie.id !== id))
-          console.log(movies.length)
       } 
   
     //   useLayoutEffect(() => {
@@ -126,7 +130,7 @@ const ContextProvider = (props) => {
  
     
     return (
-        <MyTestContext.Provider value={{movies, setMovies,addMovie,addModalVisible,setAddModalVisible,removeMovie,clearData}}>
+        <MyTestContext.Provider value={{movies, setMovies,addMovie,addModalVisible,setAddModalVisible,removeMovie,clearData,imageStorge,setImageStorage,personalData, setPersonalData}}>
             {props.children}
         </MyTestContext.Provider>
     )
