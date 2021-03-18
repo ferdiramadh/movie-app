@@ -125,7 +125,7 @@ export default function ImageUploader({navigation}) {
           {imageStorge && <Image source={{ uri: imageStorge }} style={{ width: 200, height: 200 }} />}
         <TouchableOpacity style={{position:'absolute', alignItems:'center',top:25}} onPress={pickImage}>
           <Feather name="camera" size={40} color="lightgrey" />
-          <Text style={{fontSize:16, fontWeight:'500',color:'lightgrey'}}>Take a Photo</Text>
+          <Text style={{fontSize:16, fontWeight:'500',color:'red'}}>Take a Photo</Text>
         </TouchableOpacity>
         <TouchableOpacity style={{position:'absolute', alignItems:'center',bottom:25}} onPress={removeImage}>
           <AntDesign name="delete" size={40} color="lightgrey" />
