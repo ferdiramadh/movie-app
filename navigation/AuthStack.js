@@ -42,12 +42,10 @@ export const AuthStack = ({navigation, style}) => {
           headerTransparent:'true'
 
         }} />  
-        <Stack.Screen name='ImageUploader' component={ImageUploader} />
-        {/* <Stack.Screen name='Search' component={SearchScreen} options={() => ({
-          
-          headerTitle: props => <LogoTitle {...props}/>,
-          headerLeft: null
-        })}/> */}
+        <Stack.Screen name='ImageUploader' component={ImageUploader} options={() => ({
+          headerTitle: 'My Personal Data',
+          headerTitleAlign:'center',
+        })}/>
         <Stack.Screen name='myMovieList' component={MyMovieList} options={{
           headerTitle:'WatchList',
           headerTitleAlign:'center',

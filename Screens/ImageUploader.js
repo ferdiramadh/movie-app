@@ -120,20 +120,7 @@ export default function ImageUploader({navigation}) {
   return (
     <View style={styles.container}>
       {/* <View style={styles.content}>  */}
-        <View style={styles.photoArea}>
-          <View style={{width:200, height:200,alignItems:'center',justifyContent:'center',position:'relative',borderWidth:2, borderColor:'lightgrey'}}>
-          {imageStorge && <Image source={{ uri: imageStorge }} style={{ width: 200, height: 200 }} />}
-        <TouchableOpacity style={{position:'absolute', alignItems:'center',top:25}} onPress={pickImage}>
-          <Feather name="camera" size={40} color="lightgrey" />
-          <Text style={{fontSize:16, fontWeight:'500',color:'lightgrey'}}>Take a Photo</Text>
-        </TouchableOpacity>
-        <TouchableOpacity style={{position:'absolute', alignItems:'center',bottom:25}} onPress={removeImage}>
-          <AntDesign name="delete" size={40} color="lightgrey" />
-          <Text style={{fontSize:16, fontWeight:'500',color:'lightgrey'}}>Remove Photo</Text>
-        </TouchableOpacity>
-          </View>
-       
-        </View>
+
         
         <Formik 
                 initialValues={{name:personalData.name, bio:personalData.bio, location:personalData.location}}
@@ -144,7 +131,21 @@ export default function ImageUploader({navigation}) {
                 }}
             >
                 {(props) => (
-                        <View  behavior={Platform.OS === "ios" ? "padding" : "height"} style={styles.formData}>
+                        <KeyboardAvoidingView style={styles.formData} behavior="height">
+                            <View style={styles.photoArea}>
+                              <View style={{width:200, height:200,alignItems:'center',justifyContent:'center',position:'relative',borderWidth:2, borderColor:'lightgrey'}}>
+                              {imageStorge && <Image source={{ uri: imageStorge }} style={{ width: 200, height: 200 }} />}
+                                <TouchableOpacity style={{position:'absolute', alignItems:'center',top:25}} onPress={pickImage}>
+                                  <Feather name="camera" size={40} color="lightgrey" />
+                                  <Text style={{fontSize:16, fontWeight:'500',color:'lightgrey'}}>Take a Photo</Text>
+                                </TouchableOpacity>
+                                <TouchableOpacity style={{position:'absolute', alignItems:'center',bottom:25}} onPress={removeImage}>
+                                  <AntDesign name="delete" size={40} color="lightgrey" />
+                                  <Text style={{fontSize:16, fontWeight:'500',color:'lightgrey'}}>Remove Photo</Text>
+                                </TouchableOpacity>
+                              </View>
+                          </View>
+                        <Text style={styles.label}>Name</Text>
                         <TextInput 
                           style={styles.input}
                           placeholder='Your Name... (max 20 char)'
@@ -153,14 +154,17 @@ export default function ImageUploader({navigation}) {
                           onBlur={props.handleBlur('name')}   
                           maxLength={20}                   
                         />
+                        <Text style={styles.label}>Bio</Text>
                         <TextInput 
-                          style={styles.input}
+                          style={[styles.input,{height:80}]}
                           placeholder='Your Bio... (max 20 char)'
                           onChangeText={props.handleChange('bio')}
                           value={ props.values.bio}
                           onBlur={props.handleBlur('bio')}   
-                          maxLength={20}                   
+                          maxLength={50}   
+                          multiline={true}               
                         />
+                        <Text style={styles.label}>Location</Text>
                         <TextInput 
                           style={styles.input}
                           placeholder='Your Location... (max 20 char)'
@@ -169,11 +173,10 @@ export default function ImageUploader({navigation}) {
                           onBlur={props.handleBlur('location')}
                           maxLength={20}                      
                         />
-                        <Button 
-                            title='Save'
-                            onPress={props.handleSubmit}
-                        />
-                        </View>
+                        <TouchableOpacity style={styles.saveBtn} onPress={props.handleSubmit}>
+                          <Text style={{fontSize:18, fontWeight:'bold',color:'white'}}>Save</Text>
+                        </TouchableOpacity>
+                        </KeyboardAvoidingView>
                 )}
             </Formik>
 
@@ -194,16 +197,16 @@ const styles = StyleSheet.create({
   formData:{
     alignItems: 'center', 
     justifyContent: 'center',
-    // backgroundColor:'blue',
     width:'100%',
     height:'50%',
+    flex:1
   },
   photoArea:{
     alignItems: 'center', 
     justifyContent: 'center',
-    // backgroundColor:'yellow',
     width:'100%',
-    height:'50%',
+    height:'40%',
+    
   },
   input:{
     width: '80%',
@@ -215,4 +218,28 @@ const styles = StyleSheet.create({
     elevation:4,
     marginVertical:10
   },
+  titlePage:{
+    fontSize:20,
+    fontWeight:'bold',
+    marginBottom:0,
+    position:'absolute',
+    top:10,
+  },
+  label:{
+    fontSize:18,
+    fontWeight:'800',
+    alignSelf:'flex-start',
+    marginLeft:45,
+    color:'red'
+
+  },
+  saveBtn:{
+    width:'30%',
+    height:35,
+    backgroundColor:'blue',
+    justifyContent:'center',
+    alignItems:'center',
+    borderRadius:10,
+    elevation:4
+  }
 })

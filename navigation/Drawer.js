@@ -7,11 +7,11 @@ import SearchScreen from '../Screens/SearchScreen'
 import Home from '../Screens/Home'
 import OnboardingScreen from '../Screens/OnboardingScreen' 
 import MyMovieList from '../Screens/MyMovieList' 
-import { Feather, AntDesign} from '@expo/vector-icons';
+import { Feather, AntDesign,Ionicons,Entypo} from '@expo/vector-icons';
 import Animated from 'react-native-reanimated';
 import { useWindowDimensions } from 'react-native';
 import {MyTestContext} from '../context/contextProvider'
-
+import { styles } from "expo-ui-kit";
 
 const Drawer = createDrawerNavigator();
 
@@ -29,9 +29,17 @@ const isDrawerOpen = useIsDrawerOpen()
       <View>
         <TouchableOpacity style={{flex:1, margin:10,}} onPress={() => navigation.navigate("ImageUploader")}>
           <Image source={{uri:imageStorge}} resizeMode='cover' style={{height:100, width:100, borderRadius: 50, }}/>
-          <Text style={{fontSize:20, fontWeight:'700'}}>{personalData.name}</Text>
-          <Text>{personalData.bio}</Text>
-          <Text>{personalData.location}</Text>
+          <View style={{justifyContent:'center',marginHorizontal:10,marginTop:5}}>
+            <View style={{flexDirection:'row',}}>
+              <Ionicons name="md-person" size={18} color="black" style={{position:'absolute',top:5}}/><Text style={{fontSize:20, fontWeight:'700', marginHorizontal:20}}>{personalData.name}</Text>
+            </View>
+            <View style={{flexDirection:'row', }}>
+            <Entypo name="man" size={18} color="black" style={{position:'absolute',top:5}}/><Text style={{fontSize:20, fontWeight:'700', marginHorizontal:20}}>{personalData.bio}</Text>
+            </View>
+            <View style={{flexDirection:'row', }}>
+            <Entypo name="location-pin" size={18} color="black" style={{position:'absolute',top:5}}/><Text style={{fontSize:20, fontWeight:'700', marginHorizontal:20}}>{personalData.location}</Text>
+            </View>
+          </View>
         </TouchableOpacity>
       <DrawerItem 
         label='Search' 
