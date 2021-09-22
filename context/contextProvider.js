@@ -12,9 +12,9 @@ const ContextProvider = (props) => {
       const [imageStorge, setImageStorage] = useState(null);
       const [movies, setMovies] = useState([])
       const [personalData, setPersonalData] = useState({
-        name:'Ferdi',
-        Bio:'Lalala',
-        Location:'Bogor'
+        name:'',
+        Bio:'',
+        Location:''
       })
   
       const addMovie =  (movie_data) => {
