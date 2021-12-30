@@ -121,7 +121,7 @@ export default function ImageUploader({navigation}) {
     <View style={styles.container}>
       {/* <View style={styles.content}>  */}
         <View style={styles.photoArea}>
-          <View style={{width:200, height:200,alignItems:'center',justifyContent:'center',position:'relative',borderWidth:2, borderColor:'lightgrey'}}>
+          <View style={{width:200, height:200,alignItems:'center',justifyContent:'center',position:'relative',borderWidth:2, }}>
           {imageStorge && <Image source={{ uri: imageStorge }} style={{ width: 200, height: 200 }} />}
         <TouchableOpacity style={{position:'absolute', alignItems:'center',top:25}} onPress={pickImage}>
           <Feather name="camera" size={40} color="lightgrey" />
@@ -201,7 +201,7 @@ const styles = StyleSheet.create({
   photoArea:{
     alignItems: 'center', 
     justifyContent: 'center',
-    // backgroundColor:'yellow',
+    backgroundColor:'lightgrey',
     width:'100%',
     height:'50%',
   },
