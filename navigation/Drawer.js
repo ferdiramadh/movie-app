@@ -27,7 +27,7 @@ const isDrawerOpen = useIsDrawerOpen()
   return (
     <DrawerContentScrollView {...props}>
       <View>
-        <TouchableOpacity style={{flex:1, margin:10,}} onPress={() => navigation.navigate("ImageUploader")}>
+        <TouchableOpacity style={{flex:1, margin:10}} onPress={() => navigation.navigate("ImageUploader")}>
           <Image source={{uri:imageStorge}} resizeMode='cover' style={{height:100, width:100, borderRadius: 50, }}/>
           <View style={{justifyContent:'center',marginHorizontal:10,marginTop:5}}>
             <View style={{flexDirection:'row',}}>

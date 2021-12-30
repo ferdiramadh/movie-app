@@ -120,7 +120,20 @@ export default function ImageUploader({navigation}) {
   return (
     <View style={styles.container}>
       {/* <View style={styles.content}>  */}
-
+        <View style={styles.photoArea}>
+          <View style={{width:200, height:200,alignItems:'center',justifyContent:'center',position:'relative',borderWidth:2, }}>
+          {imageStorge && <Image source={{ uri: imageStorge }} style={{ width: 200, height: 200 }} />}
+        <TouchableOpacity style={{position:'absolute', alignItems:'center',top:25}} onPress={pickImage}>
+          <Feather name="camera" size={40} color="lightgrey" />
+          <Text style={{fontSize:16, fontWeight:'500',color:'red'}}>Take a Photo</Text>
+        </TouchableOpacity>
+        <TouchableOpacity style={{position:'absolute', alignItems:'center',bottom:25}} onPress={removeImage}>
+          <AntDesign name="delete" size={40} color="lightgrey" />
+          <Text style={{fontSize:16, fontWeight:'500',color:'lightgrey'}}>Remove Photo</Text>
+        </TouchableOpacity>
+          </View>
+       
+        </View>
         
         <Formik 
                 initialValues={{name:personalData.name, bio:personalData.bio, location:personalData.location}}
@@ -204,6 +217,7 @@ const styles = StyleSheet.create({
   photoArea:{
     alignItems: 'center', 
     justifyContent: 'center',
+    backgroundColor:'lightgrey',
     width:'100%',
     height:'40%',
     
