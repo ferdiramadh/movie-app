@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 import {StyleSheet, Text, View,ScrollView,Image} from 'react-native';
-import { Container, Tab, Tabs, StyleProvider } from 'native-base';
+// import { Container, Tab, Tabs, StyleProvider } from 'native-base';
 import { createMaterialTopTabNavigator } from '@react-navigation/material-top-tabs';
 
 const Tabtest = createMaterialTopTabNavigator();
@@ -90,30 +90,30 @@ function MyTabs({selected}) {
     );
   }
 
-const GreenScreen = ({overview}) => {
+// const GreenScreen = ({overview}) => {
 
-        return (
-            <Container>
-                <Tabs>
-                    <Tab
-                    heading='Overview'>
-                        <View style={styles.container}>
-                        {/* <Text style={{fontSize: 18, fontWeight:'700', marginBottom:5, textAlign:'left'}}>Overview</Text> */}
-              <ScrollView style={{borderTopWidth:2, paddingHorizontal:5, borderTopColor:'grey'}}>
-                <Text style={{fontSize: 14}}>{overview}</Text>
-              </ScrollView>
-                        </View>
-                    </Tab>
-                    <Tab heading='Tab 2'>
-                        <TabOne />
-                    </Tab>
-                    <Tab heading='Tab 3'>
-                        <TabTwo />
-                    </Tab>
-                </Tabs>
-            </Container>
-        );
-    }
+//         return (
+//             <Container>
+//                 <Tabs>
+//                     <Tab
+//                     heading='Overview'>
+//                         <View style={styles.container}>
+//                         {/* <Text style={{fontSize: 18, fontWeight:'700', marginBottom:5, textAlign:'left'}}>Overview</Text> */}
+//               <ScrollView style={{borderTopWidth:2, paddingHorizontal:5, borderTopColor:'grey'}}>
+//                 <Text style={{fontSize: 14}}>{overview}</Text>
+//               </ScrollView>
+//                         </View>
+//                     </Tab>
+//                     <Tab heading='Tab 2'>
+//                         <TabOne />
+//                     </Tab>
+//                     <Tab heading='Tab 3'>
+//                         <TabTwo />
+//                     </Tab>
+//                 </Tabs>
+//             </Container>
+//         );
+//     }
  export default MyTabs
   const styles = StyleSheet.create({
     container: {

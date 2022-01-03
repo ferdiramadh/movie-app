@@ -120,7 +120,7 @@ export default function ImageUploader({navigation}) {
   return (
     <View style={styles.container}>
       {/* <View style={styles.content}>  */}
-        <View style={styles.photoArea}>
+        {/* <View style={styles.photoArea}>
           <View style={{width:200, height:200,alignItems:'center',justifyContent:'center',position:'relative',borderWidth:2, }}>
           {imageStorge && <Image source={{ uri: imageStorge }} style={{ width: 200, height: 200 }} />}
         <TouchableOpacity style={{position:'absolute', alignItems:'center',top:25}} onPress={pickImage}>
@@ -133,7 +133,7 @@ export default function ImageUploader({navigation}) {
         </TouchableOpacity>
           </View>
        
-        </View>
+        </View> */}
         
         <Formik 
                 initialValues={{name:personalData.name, bio:personalData.bio, location:personalData.location}}
